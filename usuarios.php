@@ -1,3 +1,12 @@
+<title>Usuarios</title>
+<script type="text/javascript" src="apps.js"></script>
+<?php 
+    include("conexion.php"); // conexion a bd
+    $con=conectar(); // regresa la conexion
+    $sql="SELECT *  FROM usuarios"; // regresa a los electrodomesticos del cliente
+    $query=mysqli_query($con,$sql);
+?>
+<?php //require_once "vistas/parte_superiorAdministrador.php"?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +28,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 </head>
+
 
 <body id="page-top">
 
@@ -31,60 +42,28 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+                <div class="sidebar-brand-icon ">
+                    <i class="fas	fa-tools"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Servicio Franco </div>
             </a>
 
-           
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Inicio</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Clientes</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Electrodomesticos</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Reportes</span>
-                </a>
-                
-            </li>
 
-            
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-               
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
+
+                <a class="nav-link" href="home_administrador.php" data-toggle="" data-target="" aria-expanded=""
+                    aria-controls="">
+                    <i class="fas fa-users"></i>
+
+                    <span style="font-size: 18px; font-weight: bold;">Usuarios</span>
+                </a>
             </li>
 
 
 
-        
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -103,18 +82,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -143,8 +111,7 @@
                             </div>
                         </li>
 
-                        
-                       
+
 
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -153,14 +120,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user->getNombre();?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Administrador";//$user->getNombre();?></span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -173,64 +140,82 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
 
-                
-                    
 
-                    <!-- Content Row -->
 
+                <div class="container">
                     <div class="row">
+                        <h1>Usuarios</h1>
+                        <div class="col-3">
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Reparaciones pendientes</h6>
-                                        
-
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
-
-
-                            
-
+                            <a href="agregar_usuario.php?>"><input class="btn btn-primary" type="button"
+                                    value="Agregar usuario"></a>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
 
+                <br>
+                <br>
+
+                <!-- Tabla donde estan los clientes -->
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead class="table-success table-striped">
+                            <!-- <tr>
+                <th>Id electrodomestico</th> -->
+                            <th>Id usuario</th>
+                            <th>Nombre</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Rol</th>
+                            <th></th>
+                            <th></th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php
+                    // Aqui se rellena la tabla con los datos, con un arreglo y asignando los datos a cada tabla
+                                            while($row=mysqli_fetch_array($query)){ 
+                                            ?>
+                            <tr>
+
+                                <th><?php  echo $row['idUsuario']?></th>
+                                <th><?php  echo $row['nombre']?></th>
+                                <th><?php  echo $row['username']?></th>
+                                <th><?php  echo $row['password']?></th>
+                                <th><?php  echo $row['rol']?></th>
+
+
+                                <th><a href="actualizar_usuario.php?idUsuario=<?php echo $row['idUsuario'] ?>"
+                                        class="fas	fa-pen"> </a>
+                                </th>
+
+                                <!--Para confirmacion de borrar  -->
+
+                                <th><a href="delete_usuario.php?idUsuario=<?php echo $row['idUsuario'] ?>"
+                                        class="fas	fa-trash-alt" onclick="return ConfirmDelete();"></a>
+                                </th>
+
+                                <!-- <th>
+                    <a href="delete_usuario.php?idUsuario=<?php //echo $row['idUsuario'] ?>"><input class="fas	fa-trash-alt" type="button"  onclick="return confirmDelete()"></a>                               
+                </th> -->
+
+
+                            </tr>
+
+                            <?php 
+
+                                                }
+
+                                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <!-- End of Main Content -->
-
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -288,7 +273,18 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    
 </body>
-
+<script type="text/javascript">
+    function ConfirmDelete() {
+        if(confirm("¿Realmente desea eliminar este usuario?"))
+    {
+        return true;
+    }else{
+        return false;
+    } 
+    }
+    </script>
 </html>
+
+<?php //require_once "vistas/parte_inferior.php" ?>

@@ -7,8 +7,8 @@
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 
-		<title>SB Admin 2 - Login</title>
-
+		<title>Login Taller</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<!-- Custom fonts for this template-->
 		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 		<link
@@ -29,21 +29,29 @@
 						<div class="card-body p-0">
 							<!-- Nested Row within Card Body -->
 							<div class="row">
-								<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+								<div class="">
+								<img class="image" src="img/login2.jpg" alt="Servicio de lavadoras">
+								</div>
 								<div class="col-lg-6">
 									<div class="p-5">
 										<div class="text-center">
-											<h1 class="h4 text-gray-900 mb-4">¡Bienvenido de nuevo!</h1>
+											<h1 class="h4 text-gray-900 mb-4">¡Bienvenido al sistema!</h1>
 										</div>
-										<form class="user">
+										<form class="user" action="" method="POST">
+										<?php
+            								if(isset($errorLogin)){
+               									echo $errorLogin;
+           									 }
+       										 ?>
 											<div class="form-group">
-												<input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Nombre de usuario" />
+												<input type="text" class="form-control form-control-user" id="exampleInputPassword" name="username" placeholder="Nombre de usuario" />
 											</div>
 											<div class="form-group">
-												<input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña" />
+												<input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Contraseña" />
 											</div>
 											<div class="form-group"></div>
-											<a href="index.html" class="btn btn-primary btn-user btn-block"> Login </a>
+											<!-- <a href="index.html" class="btn btn-primary btn-user btn-block"> Login </a> -->
+											<p class="center"><input class="btn btn-primary btn-user btn-block" type="submit" value="Iniciar Sesión"></p>
 										</form>
 										<hr />
 										
