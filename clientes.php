@@ -1,7 +1,7 @@
 
 <?php 
     include("conexion.php"); // conexion a bd
-    $con=conectar(); // regresa la conexion holaaa
+    $con=conectar(); // regresa la conexion holaaa mundo prueba 3
 
     $sql="SELECT *  FROM cliente"; // regresa a los alumnos
     $query=mysqli_query($con,$sql);
