@@ -58,7 +58,7 @@
                 <th>Nombre</th>
                 <th>Apellido paterno</th>
                 <th>Apellido materno</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Calle</th>
                 <th>No. Casa Interior</th>
                 <th>No. Casa Exterior</th>

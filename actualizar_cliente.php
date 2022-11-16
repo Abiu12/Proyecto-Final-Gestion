@@ -49,6 +49,9 @@
             <div class="col">
                 <h3>Apellido Materno*</h3>
             </div>
+            <div class="col">
+                <h3>Teléfono*</h3>
+            </div>
         </div>
 
         <div class="row">
@@ -64,28 +67,34 @@
                 <input type="text" onkeypress="return soloLetras(event)" class="form-control mb-3"
                     name="apellidoMaterno" value="<?php echo $row['apellidoMaterno']  ?>" required>
             </div>
+            <div class="col">
+                <input type="text" class="form-control mb-3" name="noTelefono" value="<?php echo $row['noTelefono']  ?>"
+                    onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required
+                    minlength="10" maxlength="10" required>
+            </div>
         </div>
         <br>
         <br>
         <br>
-        <h2>DATOS DE CONTACTO</h2>
+        <h2 style="font-size: 30px; font-weight: bold;">Domicilio</h2>
         <br>
         <div class="row">
-            <div class="col">
-                <h3>Telefono*</h3>
-            </div>
-            <div class="col">
-                <h3>Calle*</h3>
-            </div>
-            <div class="col">
-                <h3>Número de casa interior</h3>
-            </div>
-            <div class="col">
-                <h3>Número de casa exterior</h3>
-            </div>
-            <div class="col">
-                <h3>Colonia</h3>
-            </div>
+            
+        <div class="col">
+                    <h4>Calle*</h4>
+                </div>
+                <div class="col">
+                    <h4>No. Interior</h4>
+                </div>
+                <div class="col">
+                    <h4>No. exterior</h4>
+                </div>
+                <div class="col">
+                    <h4>Colonia*</h4>
+                </div>
+                <div class="col">
+                    <h4>Municipio</h4>
+                </div>
         </div>
 
         <div class="row">
