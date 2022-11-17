@@ -39,31 +39,24 @@
 
     <form action="insertar_electrodomestico.php?id=<?php echo $idCliente ?>" method="POST">
         <!-- El name debe ser tal cual esta en la bd, es la identificacion -->
-        <h2>DATOS DEL ELECTRODOMÉSTICO</h2>
+        <h2 style= "font-size: 30px; font-weight: bold;">Datos del electrodoméstico</h2>
         <br>
         <div class="row">
             <div class="col">
-                <h3>Codigo de seguimiento*</h3>
+                <h4>Nombre*</h4>
             </div>
             <div class="col">
-                <h3>Nombre*</h3>
+                <h4>Modelo*</h4>
             </div>
             <div class="col">
-                <h3>Modelo*</h3>
+                <h4>Marca*</h4>
             </div>
             <div class="col">
-                <h3>Marca*</h3>
-            </div>
-            <div class="col">
-                <h3>Fecha entrada*</h3>
+                <h4>Fecha entrada*</h4>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <input type="text" onkeypress="" class="form-control mb-3" name="codigo_seguimiento"
-                    required>
-            </div>
             <div class="col">
                 <input type="text" onkeypress="return soloLetras(event)" class="form-control mb-3" name="nombre"
                     required>
@@ -85,19 +78,19 @@
         <br>
         <div class="row">
             <div class="col">
-                <h3>Fecha de salida*</h3>
+                <h4>Fecha de salida*</h4>
             </div>
             <div class="col">
-                <h3>Estado*</h3>
+                <h4>Estado*</h4>
             </div>
             <div class="col">
-                <h3>Estado de garantia*</h3>
+                <h4>Estado de garantia*</h4>
             </div>
             <div class="col">
-                <h3>Observaciones*</h3>
+                <h4>Observaciones*</h4>
             </div>
             <div class="col">
-                <h3>Trabajo a realizar*</h3>
+                <h4>Trabajo a realizar*</h4>
             </div>
 
         </div>

@@ -68,7 +68,7 @@
                     name="apellidoMaterno" value="<?php echo $row['apellidoMaterno']  ?>" required>
             </div>
             <div class="col">
-                <input type="text" class="form-control mb-3" name="noTelefono" value="<?php echo $row['noTelefono']  ?>"
+                <input type="text" class="form-control mb-3" name="telefono" value="<?php echo $row['telefono']  ?>"
                     onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required
                     minlength="10" maxlength="10" required>
             </div>
@@ -98,11 +98,7 @@
         </div>
 
         <div class="row">
-            <div class="col">
-                <input type="text" class="form-control mb-3" name="noTelefono" value="<?php echo $row['noTelefono']  ?>"
-                    onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required
-                    minlength="10" maxlength="10" required>
-            </div>
+           
             <div class="col">
                 <input type="text" class="form-control mb-3" name="calle" value="<?php echo $row['calle']  ?>"
                     onkeypress="return soloLetras(event)" required>
@@ -118,6 +114,11 @@
             <div class="col">
                 <input type="text" class="form-control mb-3" name="colonia" value="<?php echo $row['colonia']  ?>"
                     onkeypress="return soloLetras(event)" onkeypress="return soloLetras(event)" required>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control mb-3" name="municipio" value="<?php echo $row['municipio']  ?>"
+                    onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required
+                    minlength="10" maxlength="10" required>
             </div>
 
         </div>
