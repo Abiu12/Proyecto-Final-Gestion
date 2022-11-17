@@ -1,7 +1,7 @@
 <?php
     require 'conexion.php';
 
-    $columns = ['idCliente','nombre','apellidoPaterno','apellidoMaterno','noTelefono','calle','noCasaInt','noCasaExt','colonia'];
+    $columns = ['idCliente','nombre','apellidoPaterno','apellidoMaterno','telefono','calle','noCasaInt','noCasaExt','colonia','municipio'];
 
     $table = "cliente";
     $id='idCliente';
@@ -76,12 +76,12 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['nombre'] . '</td>';
         $output['data'] .= '<td>' . $row['apellidoPaterno'] . '</td>';
         $output['data'] .= '<td>' . $row['apellidoMaterno'] . '</td>';
-        $output['data'] .= '<td>' . $row['noTelefono'] . '</td>';
+        $output['data'] .= '<td>' . $row['telefono'] . '</td>';
         $output['data'] .= '<td>' . $row['calle'] . '</td>';
         $output['data'] .= '<td>' . $row['noCasaInt'] . '</td>';
         $output['data'] .= '<td>' . $row['noCasaExt'] . '</td>';
         $output['data'] .= '<td>' . $row['colonia'] . '</td>';
-
+        $output['data'] .= '<td>' . $row['municipio'] . '</td>';
         
         $idCliente= $row['idCliente'];
         $output['data'] .='<td><div class="row">';

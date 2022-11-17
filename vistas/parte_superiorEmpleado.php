@@ -46,7 +46,7 @@
             <li class="nav-item">
 
 
-                <a class="nav-link" href="clientes.php" data-toggle="" data-target="" aria-expanded="" aria-controls="">
+                <a class="nav-link" href="home_empleado.php" data-toggle="" data-target="" aria-expanded="" aria-controls="">
                     <i class="fas fa-users"></i>
                     <span style="font-size: 18px; font-weight: bold;">Clientes</span>
                 </a>

@@ -63,6 +63,7 @@
                 <th>No. Casa Interior</th>
                 <th>No. Casa Exterior</th>
                 <th>Colonia</th>
+                <th>Municipio</th>
                 <th>Acciones</th>
                 
             </tr>

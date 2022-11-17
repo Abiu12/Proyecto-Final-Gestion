@@ -2,13 +2,14 @@
 include("conexion.php"); //variables de la conexion
 $con=conectar();
 
-//Variables para los datos que vamos a recuperar
-// $cod_estudiante=$_POST['cod_estudiante']; 
-// $dni=$_POST['dni'];
-// $nombres=$_POST['nombres'];
-// $apellidos=$_POST['apellidos'];
+date_default_timezone_set('America/Mexico_City');
+$Año= date('Y');  //Año en 4 digitos
+$MesNumero = date('n'); // Número del mes en curso
+$DiasMes= date('d'); // Dias del mes en curso
+$Hora=date('his A'); // Hora actual con formato AM
 
-$codigo_seguimiento=$_POST['codigo_seguimiento']; 
+
+
 $nombre=$_POST['nombre']; 
 $modelo=$_POST['modelo']; 
 $marca=$_POST['marca']; 
@@ -19,7 +20,9 @@ $estado_garantia=$_POST['estado_garantia'];
 $observaciones=$_POST['observaciones'];  
 $trabajo_a_realizar=$_POST['trabajo_a_realizar'];  
 $idCliente=$_GET['id']; /**Lo pasamos con la url */
-
+$codigo_seguimiento= "ELEC".$MesNumero.$DiasMes.substr($Año,2,3).$idCliente."_".substr($Hora,0,6);
+//echo $codigo_seguimiento;
+//exit;
 
 
 

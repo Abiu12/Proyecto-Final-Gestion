@@ -67,7 +67,7 @@
                     <input type="text" onkeypress="return soloLetras(event)" class="form-control mb-3" name="apellidoMaterno" required>
                 </div>
                 <div class="col-2">
-                    <input type="text" class="form-control mb-3" name="noTelefono" placeholder="" onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required minlength="10" maxlength="10">
+                    <input type="text" class="form-control mb-3" name="telefono" placeholder="" onchange="return ValidarTelefono(this)" onkeypress="return soloNumeros(event);" required minlength="10" maxlength="10">
                 </div>
             </div>
             <br>

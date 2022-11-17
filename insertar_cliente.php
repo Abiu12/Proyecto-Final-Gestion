@@ -12,30 +12,29 @@ $con=conectar();
 $nombre=$_POST['nombre']; 
 $apellidoPaterno=$_POST['apellidoPaterno']; 
 $apellidoMaterno=$_POST['apellidoMaterno']; 
-$noTelefono=$_POST['noTelefono']; 
+$telefono=$_POST['telefono']; 
 $calle=$_POST['calle']; 
 $noCasaInt=$_POST['noCasaInt']; 
 $noCasaExt=$_POST['noCasaExt']; 
 $colonia=$_POST['colonia']; 
+$municipio=$_POST['municipio'];
 
-if (buscarRepetido($con ,$nombre, $apellidoPaterno, $apellidoMaterno, $noTelefono) == 1) {
+if (buscarRepetido($con ,$nombre, $apellidoPaterno, $apellidoMaterno, $telefono) == 1) {
     // echo "ya esta registrado";
     // echo '<script language="javascript">alert("Usuario Registrado");</script>';
     Header("Location: agregar_cliente.php?statusClienteRegistrado=1");
 
 }else{
-    $sql=" INSERT INTO cliente VALUES(NULL,'$nombre','$apellidoPaterno','$apellidoMaterno','$noTelefono','$calle','$noCasaInt','$noCasaExt','$colonia')";
+    $sql=" INSERT INTO cliente VALUES(NULL,'$nombre','$apellidoPaterno','$apellidoMaterno','$telefono','$calle','$noCasaInt','$noCasaExt','$colonia','$municipio')";
     $query= mysqli_query($con,$sql);
     Header("Location: home_empleado.php");
 }
 
-
-// $sql="INSERT INTO alumno VALUES('1','$Abiu','$apellidoPaterno','$apellidoMaterno','$noTelefono','$calle','$noCasaInt','$colonia')";
  
 
 
 function buscarRepetido($conexion,$name,$apellidoP,$apellidoM,$telefono){
-    $sqli = "SELECT * from cliente where nombre='$name' and apellidoPaterno='$apellidoP' and apellidoMaterno='$apellidoM' and noTelefono ='$telefono'";
+    $sqli = "SELECT * from cliente where nombre='$name' and apellidoPaterno='$apellidoP' and apellidoMaterno='$apellidoM' and telefono ='$telefono'";
     
     $result = mysqli_query($conexion, $sqli);
     
