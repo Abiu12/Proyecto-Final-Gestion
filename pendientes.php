@@ -106,7 +106,11 @@
                                 $idElectrodomestico=$row['idElectrodomestico']; 
                             ?>
 
-                                <div class="col-md-2">
+                                <div class="col-md-3">
+                                    <br>
+                                    <br>
+                                    
+                                    <h7>Acción a realizar</h7>
                                     <br>
                                     <?php if($row['estado']=="En revisión"){?>
 
