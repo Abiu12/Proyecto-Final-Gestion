@@ -72,7 +72,7 @@ $output['paginacion']= '';
 if ($num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         $output['data'] .= '<tr>';
-        $output['data'] .= '<td>' . $row['idCliente'] . '</td>';
+        // $output['data'] .= '<td>' . $row['idCliente'] . '</td>';
         $output['data'] .= '<td>' . $row['nombre'] . '</td>';
         $output['data'] .= '<td>' . $row['apellidoPaterno'] . '</td>';
         $output['data'] .= '<td>' . $row['apellidoMaterno'] . '</td>';

@@ -14,7 +14,7 @@
     <!-- Separa los datos -->
 
 
-    <h1>Agregar electrodomestico</h1>
+    <h1>Agregar electrodoméstico</h1>
 
     <br>
     <br>
@@ -23,8 +23,8 @@
 
     <div class="row">
         <div class="col-10">
-            <h1>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?>
-                <?php echo $row2['apellidoMaterno'] ?> </h1>
+            <h3>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?>
+                <?php echo $row2['apellidoMaterno'] ?> </h3>
         </div>
         <div class="col-2">
             <h6>* Campos obligatorios</h6>
@@ -39,7 +39,7 @@
 
     <form action="insertar_electrodomestico.php?id=<?php echo $idCliente ?>" method="POST">
         <!-- El name debe ser tal cual esta en la bd, es la identificacion -->
-        <h2 style= "font-size: 30px; font-weight: bold;">Datos del electrodoméstico</h2>
+        <h2 style="font-size: 30px; font-weight: bold;">Datos del electrodoméstico</h2>
         <br>
         <div class="row">
             <div class="col">
@@ -126,11 +126,10 @@
         <br>
         <br>
         <div class="row">
+            <div class="col-9"></div>
             <div class="col">
                 <button class="btn btn-primary" type="submit">Registrar electrodoméstico</button>
-                <!-- <input type="submit" class="btn btn-primary"> -->
             </div>
-
         </div>
 
     </form>

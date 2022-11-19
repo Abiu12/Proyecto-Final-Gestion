@@ -1,4 +1,3 @@
-
 <?php 
     include("conexion.php"); // conexion a bd
     $con=conectar(); // regresa la conexion holaaa mundo prueba 3
@@ -23,28 +22,30 @@
         </div>
 
         <div class="col-auto">
-            <label for="num_registros" class="col-form-label">Registros </label>
+            <label for="num_registros" class="col-form-label">registros </label>
         </div>
-
-        <div class="col-4"></div>
-
-        <div class="col-auto">
-            <label for="campo" class="col-form-label">Buscar: </label>
-        </div>
-
-        <div class="col-auto">
-            <input type="text" name="campo" id="campo" class="form-control">
-        </div>
-
-
-
     </div>
 </div>
 
-<div class="col-3">
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-1">
+            <label for="campo" class="col-form-label">Buscar: </label>
+        </div>
 
-    <a href="agregar_cliente.php?statusClienteRegistrado=0"><input class="btn btn-primary" type="button" value="Agregar cliente"></a>
+        <div class="col-2">
+            <input type="text" name="campo" id="campo" class="form-control">
+        </div>
+        <div class="col-7"></div>
+        <div class="col-1">
+            <a href="agregar_cliente.php?statusClienteRegistrado=0"><input class="btn btn-primary" type="button"
+                    value="Agregar cliente"></a>
+        </div>
+    </div>
 </div>
+
+
 
 <br>
 <br>
@@ -54,18 +55,17 @@
     <table class="table">
         <thead class="table-success table-striped">
             <tr>
-                <th>Id cliente</th>
                 <th>Nombre</th>
-                <th>Apellido paterno</th>
-                <th>Apellido materno</th>
+                <th>Primer apellido</th>
+                <th>Segundo apellido</th>
                 <th>Teléfono</th>
                 <th>Calle</th>
-                <th>No. Casa Interior</th>
-                <th>No. Casa Exterior</th>
+                <th>No. Interior</th>
+                <th>No. Exterior</th>
                 <th>Colonia</th>
                 <th>Municipio</th>
                 <th>Acciones</th>
-                
+
             </tr>
         </thead>
 
@@ -108,10 +108,10 @@
 
         let content = document.getElementById("contenti");
 
-        if(pagina !=null){
-            paginaActual= pagina;
+        if (pagina != null) {
+            paginaActual = pagina;
         }
-        
+
         let url = "load_clientes.php";
         let formaData = new FormData();
         /**Enviamos los datos a load */
@@ -132,19 +132,16 @@
                 document.getElementById("nav-paginacion").innerHTML = data.paginacion;
             }).catch(err => console.log(err))
     }
-
-    
     </script>
 
 
-<script type="text/javascript">
+    <script type="text/javascript">
     function ConfirmDeleteClientes() {
-        if(confirm("¿Realmente desea eliminar este cliente?"))
-    {
-        return true;
-    }else{
-        return false;
-    } 
+        if (confirm("¿Realmente desea eliminar este cliente?")) {
+            return true;
+        } else {
+            return false;
+        }
     }
     </script>
 

@@ -24,14 +24,16 @@
 <div class="container">
     <!-- Separa los datos -->
 
-    <h1>Actualizar electrodomestico</h1>
+    <h1>Actualizar electrodoméstico</h1>
     <br>
-    <br>
+
     <?php $row2=mysqli_fetch_array($query2);   ?>
     <div class="row">
         <div class="col-10">
-            <h1>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?>
-                <?php echo $row2['apellidoMaterno'] ?> </h1>
+            <h3>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?>
+                <?php echo $row2['apellidoMaterno'] ?> </h3>
+            <br>
+            <br>
         </div>
         <div class="col-2">
             <h6>* Campos obligatorios</h6>
@@ -47,31 +49,24 @@
         action="update_electrodomestico.php?idCliente=<?php echo $idCliente ?> && idElectrodomestico=<?php echo $idElectrodomestico ?>"
         method="POST">
 
-        <h2>DATOS DEL ELECTRODOMESTICO</h2>
+        <h2 style="font-size: 30px; font-weight: bold;">Datos del electrodoméstico</h2>
         <br>
         <div class="row">
             <div class="col">
-                <h3>Codigo de seguimiento*</h3>
+                <h4>Nombre*</h4>
             </div>
             <div class="col">
-                <h3>Nombre*</h3>
+                <h4>Modelo*</h4>
             </div>
             <div class="col">
-                <h3>Modelo*</h3>
+                <h4>Marca*</h4>
             </div>
             <div class="col">
-                <h3>Marca*</h3>
-            </div>
-            <div class="col">
-                <h3>Fecha entrada*</h3>
+                <h4>Fecha entrada*</h4>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <input type="text" onkeypress="" class="form-control mb-3" name="codigo_seguimiento"
-                    value="<?php echo $row['codigo_seguimiento']  ?>" required>
-            </div>
             <div class="col">
                 <input type="text" onkeypress="return soloLetras(event)" class="form-control mb-3" name="nombre"
                     value="<?php echo $row['nombre']  ?>" required>
@@ -95,19 +90,19 @@
         <br>
         <div class="row">
             <div class="col">
-                <h3>Fecha de salida*</h3>
+                <h4>Fecha de salida*</h4>
             </div>
             <div class="col">
-                <h3>Estado*</h3>
+                <h4>Estado*</h4>
             </div>
             <div class="col">
-                <h3>Estado de garantia*</h3>
+                <h4>Estado de garantia*</h4>
             </div>
             <div class="col">
-                <h3>Observaciones*</h3>
+                <h4>Observaciones*</h4>
             </div>
             <div class="col">
-                <h3>Trabajo a realizar*</h3>
+                <h4>Trabajo a realizar*</h4>
             </div>
 
         </div>
@@ -120,19 +115,27 @@
             </div>
             <div class="col">
                 <select name="estado" id="estado" class="form-control mb-3">
-                    <option value="En revisión" <?php if($row['estado']=="En revisión"){ echo "selected"; }?>>En revisión</option>
-                    <option value="En reparación" <?php if($row['estado']=="En reparación"){ echo "selected"; }?>>En reparación</option>
-                    <option value="Terminado" <?php if($row['estado']=="Terminado"){ echo "selected"; }?>>Terminado</option>
-                    <option value="Entregado" <?php if($row['estado']=="Entregado"){ echo "selected"; }?>>Entregado</option>
-                    <option value="Sin trabajar" <?php if($row['estado']=="Sin trabajar"){ echo "selected"; }?>>Sin trabajar</option>
+                    <option value="En revisión" <?php if($row['estado']=="En revisión"){ echo "selected"; }?>>En
+                        revisión</option>
+                    <option value="En reparación" <?php if($row['estado']=="En reparación"){ echo "selected"; }?>>En
+                        reparación</option>
+                    <option value="Terminado" <?php if($row['estado']=="Terminado"){ echo "selected"; }?>>Terminado
+                    </option>
+                    <option value="Entregado" <?php if($row['estado']=="Entregado"){ echo "selected"; }?>>Entregado
+                    </option>
+                    <option value="Sin trabajar" <?php if($row['estado']=="Sin trabajar"){ echo "selected"; }?>>Sin
+                        trabajar</option>
                 </select>
             </div>
             <div class="col">
                 <select name="estado_garantia" id="estado_garantia" class="form-control mb-3"
                     value="<?php echo $row['estado_garantia']?>">
-                    <option value="Sin aplicar" <?php if($row['estado_garantia']=="Sin aplicar"){ echo "selected"; }?>>Sin aplicar</option>
-                    <option value="Vigente" <?php if($row['estado_garantia']=="Vigente"){ echo "selected"; }?>>Vigente</option>
-                    <option value="Vencida" <?php if($row['estado_garantia']=="Vencida"){ echo "selected"; }?>>Vencida</option>
+                    <option value="Sin aplicar" <?php if($row['estado_garantia']=="Sin aplicar"){ echo "selected"; }?>>
+                        Sin aplicar</option>
+                    <option value="Vigente" <?php if($row['estado_garantia']=="Vigente"){ echo "selected"; }?>>Vigente
+                    </option>
+                    <option value="Vencida" <?php if($row['estado_garantia']=="Vencida"){ echo "selected"; }?>>Vencida
+                    </option>
                 </select>
             </div>
             <div class="col">
@@ -148,13 +151,11 @@
         <br>
         <br>
         <div class="row">
+            <div class="col-9"></div>
             <div class="col">
-                <button class="btn btn-primary" type="submit">Actualizar electrodomestico</button>
-                <!-- <input type="submit" class="btn btn-primary"> -->
+                <button class="btn btn-primary" type="submit">Actualizar electrodoméstico</button>
             </div>
-
         </div>
-
     </form>
 </div>
 <?php require_once "vistas/parte_inferior.php" ?>

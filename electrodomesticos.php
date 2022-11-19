@@ -7,17 +7,28 @@
     $sql2="SELECT *  FROM cliente  WHERE idCliente='$idCliente'"; // regresalos datos del cliente
     $query2=mysqli_query($con,$sql2);
 ?>
+
+
 <?php require_once "vistas/parte_superiorEmpleado.php"?>
-<h1>Electrodomésticos</h1>
+
 
 <?php $row2=mysqli_fetch_array($query2);   ?>
-<h1>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?> <?php echo $row2['apellidoMaterno'] ?>
-</h1>
-<br>
+
+
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col">
+            <h1>Electrodomésticos</h1>
+            <h3>Cliente: <?php echo $row2['nombre'] ?> <?php echo $row2['apellidoPaterno'] ?>
+                <?php echo $row2['apellidoMaterno'] ?>
+            </h3>
+        </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col-9"></div>
+        <div class="col-1">
             <a href="agregar_electrodomestico.php?id=<?php echo $idCliente?>"><input class="btn btn-primary"
                     type="button" value="Agregar electrodoméstico"></a>
         </div>
@@ -26,8 +37,8 @@
 
 <br>
 <!-- Tabla donde estan los clientes -->
-<div class="col-md-12">
-    <table class="table ">
+<div class="col-md-12 overflow-auto">
+    <table class="table">
         <thead class="table-success table-striped">
             <!-- <tr>
                 <th>Id electrodomestico</th> -->
@@ -38,13 +49,10 @@
             <th>Fecha entrada</th>
             <th>Fecha salida</th>
             <th>Estado</th>
-            <th>Garantia</th>
+            <th>Garantía</th>
             <th>Observaciones</th>
             <th>Trabajo a realizar</th>
             <th>Acciones</th>
-
-
-
             </tr>
         </thead>
 
@@ -101,15 +109,15 @@
 </div>
 <html>
 <script type="text/javascript">
-    function ConfirmDeleteElectro() {
-        if(confirm("¿Realmente desea eliminar este electrodoméstico?"))
-    {
+function ConfirmDeleteElectro() {
+    if (confirm("¿Realmente desea eliminar este electrodoméstico?")) {
         return true;
-    }else{
+    } else {
         return false;
-    } 
     }
-    </script>
+}
+</script>
+
 </html>
 
 <?php require_once "vistas/parte_inferior.php" ?>
