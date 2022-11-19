@@ -10,8 +10,6 @@
 
 
 <?php require_once "vistas/parte_superiorEmpleado.php"?>
-
-
 <?php $row2=mysqli_fetch_array($query2);   ?>
 
 

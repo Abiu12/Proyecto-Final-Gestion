@@ -6,10 +6,15 @@
     padding-left: 70px;
 }
 
-h3{
-    /* background: blue; */
-    /* background-color: blue; */
+.title-card{
+    color: #aa73fd;
 }
 h6{
+    color: red;
+}
+.shadow-card{ /*Hover es cuando se pasa por encima*/
+    box-shadow: 0px 0px 12px #4d72de;
+}
+.status-text{
     color: red;
 }
