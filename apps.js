@@ -57,3 +57,9 @@ function ConfirmDelete() {
   }
   console.log("AAAAAAAA");
 }
+
+
+
+function statusButton(){
+  return 1;  
+}
