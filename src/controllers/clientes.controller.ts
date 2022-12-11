@@ -7,14 +7,14 @@ export async function viewClientes(req: Request, res: Response) {
   res.render("clientes/clientes", data);
 }
 export async function createCliente(req: Request, res: Response) {
-  const { correo,nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia } = req.body;
+  const { correo,nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia, municipio } = req.body;
   const cliente = await ClientesModel.findOne({
     where: {
       telefono
     }, raw: true
   });
   if (cliente == null) {
-    await ClientesModel.create({ correo,nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia });
+    await ClientesModel.create({ correo,nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia,municipio });
     const records = await ClientesModel.findAll({ raw: true });
     res.redirect("/clientes/view");
   }
@@ -24,9 +24,9 @@ export async function createCliente(req: Request, res: Response) {
 }
 export async function updateCliente(req: Request, res: Response) {
   const idCliente = Number(req.params.idCliente);
-  const { correo, nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia } = req.body; /**recuperamos del body del form */
+  const { correo, nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia, municipio } = req.body; /**recuperamos del body del form */
   const entity = await ClientesModel.findByPk(idCliente);
-  entity?.update({correo, nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia }) /** ? es por si viene un null */
+  entity?.update({correo, nombre, primerApellido, segundoApellido, telefono, calle, noCasaInt, noCasaExt, colonia,municipio }) /** ? es por si viene un null */
   res.redirect("/clientes/view");
 }
 

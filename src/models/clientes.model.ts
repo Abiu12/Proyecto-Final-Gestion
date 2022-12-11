@@ -54,6 +54,11 @@ ClientesModel.init(
       type: DataTypes.STRING(10),
       allowNull: false,
     },
+    
+    municipio: {
+      type: DataTypes.STRING(150),
+      allowNull: false,
+    },
   },
   {
     sequelize,
