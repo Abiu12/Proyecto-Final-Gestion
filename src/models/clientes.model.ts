@@ -51,10 +51,9 @@ ClientesModel.init(
       allowNull: false,
     },
     colonia: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
-    
     municipio: {
       type: DataTypes.STRING(150),
       allowNull: false,

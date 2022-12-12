@@ -9,5 +9,5 @@ export default interface ClienteType {
   noCasaInt?: string;
   noCasaExt?: string;
   colonia?: string;
-  municipio?: string;
+  municipio?:string;
 }

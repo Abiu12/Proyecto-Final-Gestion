@@ -92,13 +92,13 @@
                                     <br>
                                     <% if(recordsOrden[i]["estado"]=="En espera"){ %> 
                                         <form action="/pendientes/status/<%=recordsOrden[i]["idCliente"]%>/<%=recordsOrden[i]["idElectrodomestico"]%>/En revisión" method="post">
-                                            <button class="btn btn-secondary" type="submit">En revisión</button>
+                                            <button class="btn btn-primary" type="submit">En revisión</button>
                                         </form>
                                             <% } %>
                                     
                                         <% if(recordsOrden[i]["estado"]=="En revisión"){ %> 
                                         <form action="/pendientes/status/<%=recordsOrden[i]["idCliente"]%>/<%=recordsOrden[i]["idElectrodomestico"]%>/En reparación" method="post">
-                                            <button class="btn btn-secondary" type="submit">En reparación</button>
+                                            <button class="btn btn-primary" type="submit">En reparación</button>
                                         </form>
                                             <% } %>
                                     
@@ -106,7 +106,7 @@
                                     
                                         <% if(recordsOrden[i]["estado"]=="En reparación"){ %>
                                             <form action="/pendientes/status/<%=recordsOrden[i]["idCliente"]%>/<%=recordsOrden[i]["idElectrodomestico"]%>/Terminado" method="post">
-                                                <button class="btn btn-secondary" type="submit">Terminado</button>
+                                                <button class="btn btn-primary" type="submit">Terminado</button>
                                             </form>
                                             <% } %> 
                                     

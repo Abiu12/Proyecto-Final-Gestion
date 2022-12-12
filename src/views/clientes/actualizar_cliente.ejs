@@ -77,9 +77,6 @@
                     <div class="col">
                         <h4>Colonia*</h4>
                     </div>
-                    <div class="col">
-                        <h4>Municipio*</h4>
-                    </div>
                 </div>
 
                 <div class="row">
@@ -98,11 +95,11 @@
                     </div>
                     <div class="col">
                         <input type="text" class="form-control mb-3" name="colonia" value="<%=colonia%>"
-                             required>
+                            onkeypress="return soloLetras(event)" onkeypress="return soloLetras(event)" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control mb-3" name="municipio" value="<%=municipio%>"
-                             required>
+                        <input type="text"  class="form-control mb-3"
+                            name="municipio" placeholder="" required>
                     </div>
 
                 </div>
@@ -111,7 +108,7 @@
                 <div class="row">
                     <div class="col-10"></div>
                     <div class="col">
-                        <button class="btn btn-secondary" type="submit">Actualizar cliente</button>
+                        <button class="btn btn-primary" type="submit">Actualizar cliente</button>
                     </div>
                 </div>
             </div>
